@@ -3,7 +3,6 @@ plugins {
 	id 'application'
 	id 'org.springframework.boot' version '3.4.3'
 	id 'io.spring.dependency-management' version '1.1.7'
-	id "org.flywaydb.flyway" version "10.0.0"
 }
 
 group = 'noki'
@@ -34,6 +33,14 @@ dependencies {
 
 	implementation 'org.flywaydb:flyway-core:11.2.0'
 	implementation 'org.flywaydb:flyway-mysql:11.2.0'
+
+	compileOnly 'org.projectlombok:lombok:1.18.36'
+	annotationProcessor 'org.projectlombok:lombok:1.18.36'
+
+	implementation 'org.springframework.boot:spring-boot-starter-security:3.4.2'
+	testImplementation 'org.springframework.security:spring-security-test:6.4.2'
+
+	implementation 'com.auth0:java-jwt:4.4.0'
 }
 
 tasks.named('test') {
