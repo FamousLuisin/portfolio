@@ -29,6 +29,7 @@ public class SecurityConfigurations {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                         .requestMatchers(HttpMethod.GET, "/profile").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/degrees").permitAll()
                         .anyRequest().authenticated())
                 .addFilterBefore(securityFilterToken, UsernamePasswordAuthenticationFilter.class)
                 .build();
