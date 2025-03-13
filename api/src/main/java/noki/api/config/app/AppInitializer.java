@@ -1,6 +1,8 @@
 package noki.api.config.app;
 
+import noki.api.domain.profile.Profile;
 import noki.api.domain.user.User;
+import noki.api.repository.ProfileRepository;
 import noki.api.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -16,6 +18,9 @@ public class AppInitializer implements CommandLineRunner {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private ProfileRepository profileRepository;
+
     @Override
     public void run(String... args) throws Exception {
         var userAdmin = userRepository.findByLogin("admin@admin");
@@ -26,6 +31,12 @@ public class AppInitializer implements CommandLineRunner {
             admin.setPassword(passwordEncoder.encode("admin"));
 
             userRepository.save(admin);
+        }
+
+        var profile = profileRepository.findAll().iterator().hasNext();
+
+        if (!profile){
+            profileRepository.save(new Profile());
         }
     }
 }
