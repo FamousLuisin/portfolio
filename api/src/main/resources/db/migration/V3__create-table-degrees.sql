@@ -5,5 +5,5 @@ CREATE TABLE tb_degrees(
     course VARCHAR(50),
     conclusion DATE,
     profile_id BINARY(16),
-    CONSTRAINT fk_profile_id FOREIGN KEY (profile_id) REFERENCES tb_profiles(id)
+    CONSTRAINT fk_degrees_profile_id FOREIGN KEY (profile_id) REFERENCES tb_profiles(id)
 );

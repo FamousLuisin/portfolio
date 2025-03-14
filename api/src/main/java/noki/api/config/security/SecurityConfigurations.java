@@ -30,6 +30,7 @@ public class SecurityConfigurations {
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                         .requestMatchers(HttpMethod.GET, "/profile").permitAll()
                         .requestMatchers(HttpMethod.GET, "/degrees").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/contacts").permitAll()
                         .anyRequest().authenticated())
                 .addFilterBefore(securityFilterToken, UsernamePasswordAuthenticationFilter.class)
                 .build();
