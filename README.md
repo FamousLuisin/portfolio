@@ -24,17 +24,24 @@ Este é um projeto de portfólio pessoal desenvolvido utilizando **Spring Boot**
 ### Pré-requisitos
 
 - **Java 21**: Certifique-se de ter o JDK 21 instalado.
+- **Docker**: Certifique-se de ter o Docker e Docker compose instalado
 
-### Configuração do Banco de Dados
+### Usar apenas container do mysql
 
 1. Vá na pasta root do projeto.
 2. Vá até o aquivo compose e aplica suas configurações.
-3. Abra um terminal e execute o comando docker-compose up -d.
+3. Abra um terminal e execute o comando docker compose up mysql -d.
 4. Configure as credenciais do banco de dados no arquivo `application.properties`.
 5. Navegue até a pasta api.
 6. Abra o terminal e rode o programa usando o wrapper do gradlew.
 7. Em linux `./gradlew run`
 8. Em windows `.\gradlew.bat run`
+
+### Usar container da api e mysql
+
+1. Vá na pasta root do projeto.
+2. Vá até o arquivo compose e aplica suas configurações.
+3. Abra um terminal e execute o comando docker compose up -d.
 
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/portfolio_db

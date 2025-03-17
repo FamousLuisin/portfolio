@@ -18,6 +18,9 @@ services:
       - 8080:8080
     environment:
       MYSQL_HOST: mysql
+      MYSQL_DATABASE: portfolio
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
     depends_on:
       - mysql
 
