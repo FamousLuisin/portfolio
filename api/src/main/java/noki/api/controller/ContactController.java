@@ -57,8 +57,6 @@ public class ContactController {
 
     @PutMapping
     public ResponseEntity<?> putContact(@RequestBody ContactDTO dto){
-        Profile profile = profileRepository.findAll().iterator().next();
-
         Optional<Contact> contact = contactRepository.findById(dto.id());
 
         contact.ifPresentOrElse(c -> {
