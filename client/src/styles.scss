@@ -1,0 +1,33 @@
+:root{
+    --color-bg-one: #121212;
+    --color-bg-two: #1E1E1E;
+    --color-contrast: #7f02d8;
+    --color-links: #64008b;
+    --color-text: #E0E0E0;
+}
+
+body, html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    overflow-x: hidden;
+    font-family: 'Courier New', Courier, monospace;
+
+    background-color: var(--color-bg-one);
+}
+
+app-root{
+    min-height: 100%;
+    width: 100%;
+}
